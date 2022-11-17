@@ -1,0 +1,217 @@
+[
+	{
+      "assetID": "CGT",
+      "lat": 53.3735588,
+      "lon": -9.3756116
+	},
+	{
+      "assetID": "Cloosh",
+      "lat": 53.3144084,
+      "lon": -9.3826467
+	},
+	{
+      "assetID": "Coomacheo",
+      "lat": 52.019616,
+      "lon":-9.188325
+	},
+	{
+      "assetID": "Knockacummer",
+      "lat": 52.278227,
+      "lon": -9.1013043
+	},
+	{
+      "assetID": "Meentycat",
+      "lat": 54.8762367,
+      "lon": -7.8652119
+	},
+	{
+      "assetID": "Slieve Kirk",
+      "lat": 54.9206244,
+      "lon": -7.3049534
+	},
+	{
+      "assetID": "T_BEATO-1",
+      "lat": 58.302685,
+      "lon": -3.2402758
+	},
+	{
+      "assetID": "T_BEATO-2",
+      "lat": 58.302685,
+      "lon": -3.2402758
+	},
+	{
+      "assetID": "T_BEATO-3",
+      "lat": 58.302685,
+      "lon": -3.2402758
+	},
+	{
+      "assetID": "T_BEATO-4",
+      "lat": 58.302685,
+      "lon": -3.2402758
+	},
+	{
+      "assetID": "T_BHLAW-1",
+      "lat": 57.2173957,
+      "lon": -4.6610032
+	},
+	{
+      "assetID": "T_CLDCW-1",
+      "lat": 55.4455102,
+      "lon": -3.6037323
+	},
+	{
+      "assetID": "T_CLDNW-1",
+      "lat": 55.4455102,
+      "lon": -3.6037323
+	},
+	{
+      "assetID": "T_CLDSW-1",
+      "lat": 55.4455102,
+      "lon": -3.6037323
+	},
+	{
+      "assetID": "T_FERR-3",
+      "lat": 53.7158281,
+      "lon": -1.2889627
+	},
+	{
+      "assetID": "T_FERR-4",
+      "lat": 53.7158281,
+      "lon": -1.2889627
+	},
+	{
+      "assetID": "T_FIDL-1",
+      "lat": 53.3730193,
+      "lon": -2.6901556
+	},
+	{
+      "assetID": "T_FIDL-2",
+      "lat": 53.3730193,
+      "lon": -2.6901556
+	},
+	{
+      "assetID": "T_FIDL-3",
+      "lat": 53.3730193,
+      "lon": -2.6901556
+	},
+	{
+      "assetID": "T_FIDL-4",
+      "lat": 53.3730193,
+      "lon": -2.6901556
+	},
+	{
+      "assetID": "T_FOYE-1",
+      "lat": 57.243208,
+      "lon": -4.4946551
+	},
+	{
+      "assetID": "T_FOYE-2",
+      "lat": 57.243208,
+      "lon": -4.4946551
+	},
+	{
+      "assetID": "T_GLNDO",
+      "lat": 57.0904586,
+      "lon": -4.5620823
+	},
+	{
+      "assetID": "T_GORDW-1",
+      "lat": 58.1113997,
+      "lon": -3.9287272
+	},
+	{
+      "assetID": "T_GRGBW-1",
+      "lat": 51.866391,
+      "lon": 1.9247398
+	},
+	{
+      "assetID": "T_GRGBW-2",
+      "lat": 51.866391,
+      "lon": 1.9247398
+	},
+	{
+      "assetID": "T_GRGBW-3",
+      "lat": 51.866391,
+      "lon": 1.9247398
+	},
+	{
+      "assetID": "T_GRIFW-1",
+      "lat": 56.5590926,
+      "lon": -3.8193936
+	},
+	{
+      "assetID": "T_GRIFW-2",
+      "lat": 56.5590926,
+      "lon": -3.8193936
+	},
+	{
+      "assetID": "T_HADHW-1",
+      "lat": 55.250662,
+      "lon": -4.7094884
+	},
+	{
+      "assetID": "T_KEAD-1",
+      "lat": 53.6335755,
+      "lon": -1.4641939
+	},
+	{
+      "assetID": "T_KEAD-2",
+      "lat": 53.6335755,
+      "lon": -1.4641939
+	},
+	{
+      "assetID": "T_MEDP-1",
+      "lat": 51.4397913,
+      "lon": 0.6865076
+	},
+	{
+      "assetID": "T_PEHE-1",
+      "lat": 57.4756555,
+      "lon": -1.7934098
+	},
+	{
+      "assetID": "T_SGRWO-1",
+      "lat": 56.33431,
+      "lon": -1.5136
+	},
+	{
+      "assetID": "T_SGRWO-2",
+      "lat": 56.33431,
+      "lon": -1.5136
+	},
+	{
+      "assetID": "T_SGRWO-3",
+      "lat": 56.33431,
+      "lon": -1.5136
+	},
+	{
+      "assetID": "T_SGRWO-4",
+      "lat": 56.33431,
+      "lon": -1.5136
+	},
+	{
+      "assetID": "T_SGRWO-5",
+      "lat": 56.33431,
+      "lon": -1.5136
+	},
+	{
+      "assetID": "T_SGRWO-6",
+      "lat": 56.33431,
+      "lon": -1.5136
+	},
+	{
+      "assetID": "T_STLGW-1",
+      "lat": 57.093973,
+      "lon": -4.436243
+	},
+	{
+      "assetID": "T_STLGW-2",
+      "lat": 57.093973,
+      "lon": -4.436243
+	},
+	{
+      "assetID": "T_STLGW-3",
+      "lat": 57.093973,
+      "lon": -4.436243
+	}
+  ]
