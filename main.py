@@ -42,78 +42,68 @@ df['eventEnd'] = df['eventEnd'].astype('datetime64[ns]')
 # Filter Data by activeFlag, eventStatus and assetID must be present in the locations table
 df = df.loc[(df.activeFlag != False) & (df.eventStatus == "Active") & (df.assetID.isin(df_locations['assetID']))]
 
-df_names = []
 y = 0
-for row in df['messageID'].unique():
-    df = df.loc[df[row.messageID]]
-    df_names.append(df['messageID'].unique())
-    df_names[y] = pd.DataFrame(df, columns=['messageID', 'sequenceID', 'publishedDateTime', 'assetID', 'assetEICCode',
-                                            'affectedUnit', 'assetFuelType', 'assetNormalCapacity', 'availableCapacity',
-                                            'eventStart', 'eventEnd', 'cause', 'revisionNumber', 'unavailableCapacity',
-                                            'relatedInformation'])
-    y = y + 1
+for index, row in df.iterrows():
+    dff = df.loc[(df.messageID == row['messageID'])]
+    x = 0
+    dff.reset_index(drop=True, inplace=True)
+    #print(dff.shape)
 
-print(df_names[4])
-x = 0
-# for row in dff.iterrows():
-#
-#     date_diff = df_names[x].loc[x].at['eventEnd'] - df_names[x].loc[x].at['eventStart']
-#     date_diff = datetime.timedelta.total_seconds(date_diff)
-#     ten_min = date_diff / 600
-#     ten_min = int(ten_min)
-#
-#     messageID = df_names[x].loc[x].at['messageID']
-#     #df_filtered = dff.loc[(dff.messageID == messageID)]
-#     print(messageID)
-#
-#     sequenceID = df_names[x].loc[x].at['sequenceID']
-#     publishedDateTime = df_names[x].loc[x].at['publishedDateTime']
-#     assetID = df_names[x].loc[x].at['assetID']
-#     assetEICCode = df_names[x].loc[x].at['assetEICCode']
-#     affectedUnit = df_names[x].loc[x].at['affectedUnit']
-#     assetFuelType = df_names[x].loc[x].at['assetFuelType']
-#     assetNormalCapacity = df_names[x].loc[x].at['assetNormalCapacity']
-#     availableCapacity = df_names[x].loc[x].at['availableCapacity']
-#     eventEnd = df_names[x].loc[x].at['eventEnd']
-#     cause = df_names[x].loc[x].at['cause']
-#     revisionNumber = df_names[x].loc[x].at['revisionNumber']
-#     unavailableCapacity = df_names[x].loc[x].at['unavailableCapacity']
-#     relatedInformation = df_names[x].loc[x].at['relatedInformation']
-#
-# #     for i in range(ten_min):
-# #
-# #         eventStart = (df_filtered['eventStart'].iloc[-1] + datetime.timedelta(minutes=10))
-# #         new_row = pd.Series({'messageID': messageID, 'sequenceID': sequenceID, 'publishedDateTime': publishedDateTime,
-# #                              'assetID': assetID, 'assetEICCode': assetEICCode, 'affectedUnit': affectedUnit,
-# #                              'assetFuelType': assetFuelType, 'assetNormalCapacity': assetNormalCapacity,
-# #                              'availableCapacity': availableCapacity, 'eventStart': eventStart, 'eventEnd': eventEnd,
-# #                              'cause': cause, 'revisionNumber': revisionNumber,
-# #                              'unavailableCapacity': unavailableCapacity, 'relatedInformation': relatedInformation})
-# #
-# #         df_final = pd.concat([df_final, new_row.to_frame().T], ignore_index=True)
-# #
-# #     new_row = pd.Series({'messageID': messageID, 'sequenceID': sequenceID, 'publishedDateTime': publishedDateTime,
-# #                          'assetID': assetID, 'assetEICCode': assetEICCode, 'affectedUnit': affectedUnit,
-# #                          'assetFuelType': assetFuelType, 'assetNormalCapacity': assetNormalCapacity,
-# #                          'availableCapacity': availableCapacity, 'eventStart': eventEnd, 'eventEnd': eventEnd,
-# #                          'cause': cause, 'revisionNumber': revisionNumber, 'unavailableCapacity': unavailableCapacity,
-# #                          'relatedInformation': relatedInformation})
-# #
-# #     df_final = pd.concat([df_final, new_row.to_frame().T], ignore_index=True)
-# #
-# #     df_final['sequenceID'] = df_final['sequenceID'].astype(int)
-# #     #df_final['publishedDateTime'] = df_final['publishedDateTime'].astype('datetime64[ns]')
-# #     df_final['assetNormalCapacity'] = df_final['assetNormalCapacity'].astype(int)
-# #     df_final['availableCapacity'] = df_final['availableCapacity'].astype(int)
-# #     df_final['revisionNumber'] = df_final['revisionNumber'].astype(int)
-# #     df_final['unavailableCapacity'] = df_final['unavailableCapacity'].astype(int)
-# #     x = x + 1
-# #
-# # print(df_final.dtypes)
-# # df_final = pd.DataFrame(df_final)
-# #
-# # df_final.to_csv('df_final.csv')
-# #
-# #
-# #
-# #
+    for j in dff.itertuples():
+        date_diff = dff.loc[x].at['eventEnd'] - dff.loc[x].at['eventStart']
+        date_diff = datetime.timedelta.total_seconds(date_diff)
+        ten_min = date_diff / 600
+        ten_min = int(ten_min)
+        print(ten_min)
+
+        messageID = dff.loc[x].at['messageID']
+        print(messageID)
+        sequenceID = dff.loc[x].at['sequenceID']
+        publishedDateTime = dff.loc[x].at['publishedDateTime']
+        assetID = dff.loc[x].at['assetID']
+        assetEICCode = dff.loc[x].at['assetEICCode']
+        affectedUnit = dff.loc[x].at['affectedUnit']
+        assetFuelType = dff.loc[x].at['assetFuelType']
+        assetNormalCapacity = dff.loc[x].at['assetNormalCapacity']
+        availableCapacity = dff.loc[x].at['availableCapacity']
+        eventEnd = dff.loc[x].at['eventEnd']
+        cause = dff.loc[x].at['cause']
+        revisionNumber = dff.loc[x].at['revisionNumber']
+        unavailableCapacity = dff.loc[x].at['unavailableCapacity']
+        relatedInformation = dff.loc[x].at['relatedInformation']
+
+        for z in range(ten_min):
+            eventStart = (dff['eventStart'].iloc[-1] + datetime.timedelta(minutes=10))
+            new_row = pd.Series({'messageID': messageID, 'sequenceID': sequenceID, 'publishedDateTime': publishedDateTime,
+                                 'assetID': assetID, 'assetEICCode': assetEICCode, 'affectedUnit': affectedUnit,
+                                 'assetFuelType': assetFuelType, 'assetNormalCapacity': assetNormalCapacity,
+                                 'availableCapacity': availableCapacity, 'eventStart': eventStart, 'eventEnd': eventEnd,
+                                 'cause': cause, 'revisionNumber': revisionNumber,
+                                 'unavailableCapacity': unavailableCapacity, 'relatedInformation': relatedInformation})
+
+            df_final = pd.concat([dff, new_row.to_frame().T], ignore_index=True)
+
+        new_row = pd.Series({'messageID': messageID, 'sequenceID': sequenceID, 'publishedDateTime': publishedDateTime,
+                             'assetID': assetID, 'assetEICCode': assetEICCode, 'affectedUnit': affectedUnit,
+                             'assetFuelType': assetFuelType, 'assetNormalCapacity': assetNormalCapacity,
+                             'availableCapacity': availableCapacity, 'eventStart': eventEnd, 'eventEnd': eventEnd,
+                             'cause': cause, 'revisionNumber': revisionNumber, 'unavailableCapacity': unavailableCapacity,
+                             'relatedInformation': relatedInformation})
+
+        df_final = pd.concat([dff, new_row.to_frame().T], ignore_index=True)
+        df_final.to_csv(messageID + '.csv')
+
+        df_final['sequenceID'] = df_final['sequenceID'].astype(int)
+        #df_final['publishedDateTime'] = df_final['publishedDateTime'].astype('datetime64[ns]')
+        df_final['assetNormalCapacity'] = df_final['assetNormalCapacity'].astype(int)
+        df_final['availableCapacity'] = df_final['availableCapacity'].astype(int)
+        df_final['revisionNumber'] = df_final['revisionNumber'].astype(int)
+        df_final['unavailableCapacity'] = df_final['unavailableCapacity'].astype(int)
+    x = x + 1
+
+#print(df_final.dtypes)
+#df_final = pd.DataFrame(df_final)
+
+df_final.to_csv('df_final.csv')
+
+y = y + 1
