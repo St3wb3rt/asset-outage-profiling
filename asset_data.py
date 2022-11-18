@@ -1,4 +1,4 @@
-# peterhead.py
+# asset_data.py
 
 from elexon import ElexonRawClient
 import datetime
@@ -8,7 +8,7 @@ import pandas as pd
 my_api_key = 't2ovb8odenxim4h'
 api = ElexonRawClient(my_api_key)
 
-def get_peterhead1(publicationfrom, publicationto):
+def get_data(publicationfrom, publicationto, asset):
     # Read the data
     remit = api.request('MessageListRetrieval', PublicationFrom=publicationfrom, PublicationTo=publicationto)
     df = pd.DataFrame(remit, columns=['messageID', 'sequenceID', 'messageHeading', 'eventType', 'publishedDateTime',
@@ -23,7 +23,7 @@ def get_peterhead1(publicationfrom, publicationto):
     df['eventEnd'] = df['eventEnd'].astype('datetime64[ns]')
 
     # Filter Data by activeFlag, eventStatus and assetID must be present in the locations table
-    df = df.loc[(df.activeFlag != False) & (df.eventStatus == "Active") & (df.assetID == 'T_PEHE-1')]
+    df = df.loc[(df.activeFlag != False) & (df.eventStatus == "Active") & (df.assetID == asset)]
 
     # Iterate through each unique messageID
     y = 0

@@ -1,10 +1,7 @@
 # main.py
 
 import datetime
-import keadby as k1
-import keadby2 as k2
-import peterhead as p1
-import medway as m1
+import asset_data as ad
 
 # Get current date/time and format validFrom and validUntil dates
 currentDate = datetime.datetime.now()
@@ -17,7 +14,10 @@ publicationFrom = dateDeltaPast.strftime('%Y-%m-%d')
 dateDeltaFuture = currentDate
 publicationTo = dateDeltaFuture.strftime('%Y-%m-%d')
 
-k2.get_keadby2(publicationFrom, publicationTo)
-k1.get_keadby1(publicationFrom, publicationTo)
-p1.get_peterhead1(publicationFrom, publicationTo)
-m1.get_medway1(publicationFrom, publicationTo)
+# Declare assetID to pull data for
+asset = 'T_KEAD-2'
+
+# Call get_data function
+ad.get_data(publicationFrom, publicationTo, asset)
+
+
