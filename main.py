@@ -7,7 +7,7 @@ import asset_data as ad
 currentDate = datetime.datetime.now()
 
 # Define publicationFrom date - number of days in the past
-dateDeltaPast = currentDate + datetime.timedelta(days=-7)
+dateDeltaPast = currentDate + datetime.timedelta(days=-365)
 publicationFrom = dateDeltaPast.strftime('%Y-%m-%d')
 
 # Define publicationTo date - number of days in the future
